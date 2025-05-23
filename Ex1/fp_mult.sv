@@ -33,6 +33,8 @@ logic underflow= 1'b0;
 
 logic [31:0] z_calc;
 
+logic zero_f, inf_f, nan_f, tiny_f, huge_f, inexact_f;
+
 assign sign = a[31] ^ b[31];
 assign exp_add = ({2'b00, a[30:23]}+{2'b00, b[30:23]})-10'd127;
 assign mantissa_mult = {1'b1, a[22:0]}*{1'b1, b[22:0]};
@@ -106,7 +108,20 @@ always_comb begin
 end
 
 exception_mult exception_handler(
-
+        .a(a),
+        .b(b),
+        .z_calc(z_calc),
+        .overflow(overflow),
+        .underflow(underflow),
+        .inexact(inexact),
+        .round_mode(round_mode),
+        .z(z),
+        .zero_f(zero_f),
+        .inf_f(inf_f),
+        .nan_f(nan_f),
+        .tiny_f(tiny_f),
+        .huge_f(huge_f),
+        .inexact_f(inexact_f)
 );
 
 endmodule
