@@ -1,3 +1,17 @@
+package rounding_pkg;
+
+typedef enum logic [2:0] {
+    IEEE_near = 3'b000,
+    IEEE_zero = 3'b001,
+    IEEE_pinf = 3'b010,
+    IEEE_ninf = 3'b011,
+    away_zero = 3'b100
+} round_mode_t;
+
+endpackage
+
+import rounding_pkg::*;
+
 module fp_mult (
 	input logic clk,
 	input logic rst_n,
@@ -23,6 +37,9 @@ logic [22:0] pipe_mantissa;
 logic pipe_guard, pipe_sticky; 
 
 logic [2:0] round_mode;
+always_comb begin
+    round_mode = rnd;
+end
 logic round_sign;
 logic [9:0] round_exponent;
 logic [22:0] round_mantissa;
@@ -64,18 +81,6 @@ always_ff @(posedge clk or negedge rst_n) begin
 		pipe_sticky<=sticky;
 	end
 end
-
-package rounding_pkg;
-
-typedef enum logic [2:0] {
-    IEEE_near = 3'b000,
-    IEEE_zero = 3'b001,
-    IEEE_pinf = 3'b010,
-    IEEE_ninf = 3'b011,
-    away_zero = 3'b100
-} round_mode_t;
-
-endpackage
 
 round_mult round(
     	.pipe_sign(pipe_sign),
