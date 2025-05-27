@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-'`include "multiplication.sv"
+`include "multiplication.sv"
 module tb_mult;
 
 logic clk, rst_n;
@@ -40,6 +40,7 @@ endfunction
 
 initial begin @(posedge rst_n);
 
+  logic [31:0] expected_z;
   for (int test_num = 0; test_num < 100; test_num++) begin
     a = $urandom();
     b = $urandom();
@@ -47,7 +48,6 @@ initial begin @(posedge rst_n);
     rnd = 3'b000; 
     repeat(3) @(posedge clk);
     
-    logic [31:0] expected_z;
     expected_z = multiplication(a, b, rnd_to_string(rnd));
 
     if (z !== expected_z) begin

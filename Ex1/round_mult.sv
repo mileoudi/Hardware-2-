@@ -15,15 +15,15 @@ module round_mult (
 	output logic inexact
 );
 
-logic [23:0] mantissa_extended; 
+logic [24:0] mantissa_extended; 
 
 always_comb begin 
-	mantissa_extended = {1'b0, pipe_mantissa}; 
+	mantissa_extended = {1'b1, pipe_mantissa, pipe_guard, pipe_sticky}; // Extend mantissa to 25 bits
 	inexact=(pipe_guard|pipe_sticky);
 	
 	case (round_mode)
 		IEEE_near: begin
-			if (pipe_guard && (pipe_sticky || matissa_extended[0])) begin
+			if (pipe_guard && (pipe_sticky || mantissa_extended[0])) begin
 				mantissa_extended=mantissa_extended+1;
 			end
 		end
@@ -79,3 +79,4 @@ always_comb begin
 	round_sign = pipe_sign;
 	z_calc = {pipe_sign, round_exponent[7:0], round_mantissa[22:0]};
 end
+endmodule

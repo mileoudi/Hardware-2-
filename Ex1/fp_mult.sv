@@ -5,7 +5,8 @@ typedef enum logic [2:0] {
     IEEE_zero = 3'b001,
     IEEE_pinf = 3'b010,
     IEEE_ninf = 3'b011,
-    away_zero = 3'b100
+    near_up = 3'b100,
+	away_zero = 3'b101
 } round_mode_t;
 
 endpackage

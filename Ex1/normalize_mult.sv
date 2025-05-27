@@ -1,10 +1,10 @@
 module normalize_mult (
-	input logic [47:0] P;
-	input logic [8:0] S;
+	input logic [47:0] P,
+	input logic [8:0] S,
 
-	output logic [9:0] norm_exponent;
-	output logic [22:0] norm_mantissa;
-	output logic sticky, guard;
+	output logic [9:0] norm_exponent,
+	output logic [22:0] norm_mantissa,
+	output logic sticky, guard
 );
 
 always @(*) 
