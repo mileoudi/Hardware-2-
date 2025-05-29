@@ -50,7 +50,7 @@ logic overflow = 1'b0;
 logic underflow= 1'b0;
 
 logic [31:0] z_calc;
-
+logic [31:0] k;
 logic zero_f, inf_f, nan_f, tiny_f, huge_f, inexact_f;
 
 assign sign = a[31] ^ b[31];
@@ -122,6 +122,7 @@ exception_mult exception_handler(
         .inexact(inexact),
         .round_mode(round_mode),
         .z(z),
+		.k(k),
         .zero_f(zero_f),
         .inf_f(inf_f),
         .nan_f(nan_f),

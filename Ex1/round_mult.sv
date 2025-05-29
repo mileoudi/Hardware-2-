@@ -15,7 +15,7 @@ module round_mult (
 	output logic inexact
 );
 
-logic [24:0] mantissa_extended; 
+logic [25:0] mantissa_extended; 
 
 always_comb begin 
 	mantissa_extended = {1'b1, pipe_mantissa, pipe_guard, pipe_sticky}; // Extend mantissa to 25 bits
@@ -63,20 +63,20 @@ always_comb begin
 		end
 	endcase
 	
-	if (mantissa_extended[24] == 1'b1) begin
-        	round_mantissa = mantissa_extended[24:1]; 
+	if (mantissa_extended[25] == 1'b1) begin
+        	round_mantissa = mantissa_extended[24:2]; 
         	round_exponent = pipe_exponent + 1;  
 		round_guard = mantissa_extended[0];
         	round_sticky = 1'b0;
     	end 
 	else begin
-        	round_mantissa = mantissa_extended[22:0];   
+        	round_mantissa = mantissa_extended[23:1];   
         	round_exponent = pipe_exponent; 
-		round_guard = pipe_guard;
+			round_guard = pipe_guard;
         	round_sticky = pipe_sticky;   
     	end
 
 	round_sign = pipe_sign;
-	z_calc = {pipe_sign, round_exponent[7:0], round_mantissa[22:0]};
+	z_calc = {pipe_sign, round_exponent[7:0], round_mantissa};
 end
 endmodule
