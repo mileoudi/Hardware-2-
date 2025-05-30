@@ -14,14 +14,13 @@ endpackage
 import rounding_pkg::*;
 
 module fp_mult (
-	input logic clk,
-	input logic rst_n,
 	input  logic [31:0] a,
 	input  logic [31:0] b,
-    input  logic [2:0]  rnd,
-    
+	input  logic [2:0] rnd, 
 	output logic [31:0] z,
-    output logic [7:0]  status
+	output logic [7:0]  status,
+	input logic clk,
+	input logic rst
 );
 
 logic sign;
@@ -66,8 +65,8 @@ normalize_mult norm(
 	.norm_mantissa(norm_mantissa)
 );
 
-always_ff @(posedge clk or negedge rst_n) begin
-	if(!rst_n) begin
+always_ff @(posedge clk or negedge rst) begin
+	if(!rst) begin
 		pipe_sign<=1'b0;
 		pipe_exponent<=10'b0;
 		pipe_mantissa<=23'b0;
@@ -96,7 +95,7 @@ round_mult round(
     	.round_mantissa(round_mantissa),
     	.round_guard(round_guard),
     	.round_sticky(round_sticky),
-	.z_calc(z_calc),
+		.z_calc(z_calc),
     	.inexact(inexact)
 );
 

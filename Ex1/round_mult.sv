@@ -16,6 +16,7 @@ module round_mult (
 );
 
 logic [25:0] mantissa_extended; 
+logic [22:0] final_mantissa;
 
 always_comb begin 
 	mantissa_extended = {1'b1, pipe_mantissa, pipe_guard, pipe_sticky}; // Extend mantissa to 25 bits
@@ -66,8 +67,8 @@ always_comb begin
 	if (mantissa_extended[25] == 1'b1) begin
         	round_mantissa = mantissa_extended[24:2]; 
         	round_exponent = pipe_exponent + 1;  
-		round_guard = mantissa_extended[0];
-        	round_sticky = 1'b0;
+			round_guard    = mantissa_extended[1];
+        	round_sticky   = mantissa_extended[0];
     	end 
 	else begin
         	round_mantissa = mantissa_extended[23:1];   
@@ -75,8 +76,10 @@ always_comb begin
 			round_guard = pipe_guard;
         	round_sticky = pipe_sticky;   
     	end
+	final_mantissa = mantissa_extended[23:1];
 
 	round_sign = pipe_sign;
-	z_calc = {pipe_sign, round_exponent[7:0], round_mantissa};
+	z_calc = {round_sign, round_exponent[7:0], final_mantissa};
+
 end
 endmodule

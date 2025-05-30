@@ -1,0 +1,564 @@
+m255
+K4
+z2
+!s12c _opt11
+Z0 !s99 nomlopt
+!s12c _opt10
+R0
+!s12c _opt9
+R0
+!s12c _opt8
+R0
+!s12c _opt7
+R0
+!s12c _opt6
+R0
+!s12c _opt5
+R0
+!s12c _opt4
+R0
+Z1 !s12c _opt3
+R0
+R1
+R0
+R1
+R0
+!s12c _opt2
+R0
+!s12c _opt1
+R0
+!s12c _opt
+R0
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 dC:/Users/leoud/Hardware-2-/Ex1
+T_opt
+!s110 1748552149
+V^_;_;Lfj7:T8nJ[aC9HeJ3
+Z3 04 10 4 work fp_mult_tb fast 0
+=1-14857f420d15-6838c9d5-162-2858
+R0
+Z4 !s12b OEM100
+Z5 !s124 OEM10U5 
+Z6 o-quiet -auto_acc_if_foreign -work work
+Z7 tCvgOpt 0
+n@_opt
+Z8 OL;O;2023.3;77
+R2
+T_opt1
+!s110 1748552946
+VK=8>EZC73KTh36D5klSko1
+R3
+=1-14857f420d15-6838ccf2-c3-5248
+R0
+R4
+R5
+R6
+R7
+n@_opt1
+R8
+R2
+T_opt10
+!s110 1748600928
+V:gi1gQ3hiTE<]W5bTc@_10
+R3
+=1-14857f420d15-6839885f-34a-1a78
+R0
+R4
+Z9 !s124 OEM10U8 
+R6
+R7
+n@_opt10
+R8
+R2
+T_opt11
+!s110 1748601211
+VFU`QWO2RiA[I^2o><do7c2
+R3
+=1-14857f420d15-6839897b-1cd-980
+R0
+R4
+R9
+R6
+R7
+n@_opt11
+R8
+T_opt2
+!s110 1748554205
+VWd5h=`QY2^l`?UWa4iY>J3
+R3
+=1-14857f420d15-6838d1dc-3bd-5a0
+R0
+R4
+R5
+R6
+R7
+n@_opt2
+R8
+R2
+T_opt3
+!s110 1748556507
+V82OA@V8GKC3ZXPXF>;H2S2
+R3
+=1-14857f420d15-6838dadb-1c6-4074
+R0
+R4
+R9
+R6
+R7
+n@_opt3
+R8
+R2
+T_opt4
+!s110 1748557535
+V?<jKo7V@`lhLlK8KPREN?1
+R3
+=1-14857f420d15-6838dedf-30-28c
+R0
+R4
+R9
+R6
+R7
+n@_opt4
+R8
+R2
+T_opt5
+!s110 1748599310
+VHc^Q1;ea?n88ozCjk>o<f1
+R3
+=1-14857f420d15-6839820d-181-5f00
+R0
+R4
+R9
+R6
+R7
+n@_opt5
+R8
+R2
+T_opt6
+!s110 1748599905
+VB0d:EiGE;d1<Fjk1ZZV071
+R3
+=1-14857f420d15-68398461-a0-12a8
+R0
+R4
+R9
+R6
+R7
+n@_opt6
+R8
+R2
+T_opt7
+!s110 1748600035
+VPa9V4_[T=i>N4HNdd8K=j1
+R3
+=1-14857f420d15-683984e2-367-34d0
+R0
+R4
+R9
+R6
+R7
+n@_opt7
+R8
+R2
+T_opt8
+!s110 1748600598
+V2lgOmKOE<>7b=RY<00GeM2
+R3
+=1-14857f420d15-68398716-27-6188
+R0
+R4
+R9
+R6
+R7
+n@_opt8
+R8
+R2
+T_opt9
+!s110 1748600730
+VX]g8WLg9_l<cbk;:22c1]3
+R3
+=1-14857f420d15-6839879a-d3-34d0
+R0
+R4
+R9
+R6
+R7
+n@_opt9
+R8
+R2
+vexception_mult
+Z10 2fp_mult.sv|normalize_mult.sv|round_mult.sv|exception_mult.sv|multiplication.sv|fp_mult_top.sv|test_status_z_combinations.sv|test_status_bits.sv|fp_mult_tb.sv
+Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z12 DXx4 work 12 rounding_pkg 0 22 =UMR;mD65_EgZf5^T9Rii1
+DXx4 work 22 exception_mult_sv_unit 0 22 X1FC:5NF1ckE;c71IBNZO2
+Z13 !s110 1748601207
+Z14 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 0H[fR85b[3T[]eBO>N=Ib0
+I8fUi6Uzf5eOI?Z_nOHE;B0
+!s105 exception_mult_sv_unit
+S1
+R2
+Z15 w1748341206
+Z16 8exception_mult.sv
+Z17 Fexception_mult.sv
+!i122 23
+L0 3 166
+Z18 OL;L;2023.3;77
+31
+Z19 !s108 1748601207.000000
+Z20 !s107 fp_mult_tb.sv|test_status_bits.sv|test_status_z_combinations.sv|fp_mult_top.sv|multiplication.sv|exception_mult.sv|round_mult.sv|normalize_mult.sv|fp_mult.sv|
+Z21 !s90 fp_mult.sv|normalize_mult.sv|round_mult.sv|exception_mult.sv|multiplication.sv|fp_mult_top.sv|test_status_z_combinations.sv|test_status_bits.sv|fp_mult_tb.sv|
+!i113 0
+Z22 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R7
+Xexception_mult_sv_unit
+R10
+R11
+R12
+R13
+VX1FC:5NF1ckE;c71IBNZO2
+r1
+!s85 0
+!i10b 1
+!s100 0jgHfclo@c2X5`@]@KS`o3
+IX1FC:5NF1ckE;c71IBNZO2
+!i103 1
+S1
+R2
+R15
+R16
+R17
+!i122 23
+Z23 L0 1 0
+R18
+31
+R19
+R20
+R21
+!i113 0
+R22
+R7
+vfp_mult
+R10
+R11
+R12
+DXx4 work 15 fp_mult_sv_unit 0 22 clbU^<^Tf`D_b1a2]^Hz62
+R13
+R14
+r1
+!s85 0
+!i10b 1
+!s100 WDaGZPURVbG_L^dBUMVdg3
+IcA6;8lo`9ZHcT>kgMEBnZ2
+!s105 fp_mult_sv_unit
+S1
+R2
+Z24 w1748556496
+Z25 8fp_mult.sv
+Z26 Ffp_mult.sv
+!i122 23
+L0 16 118
+R18
+31
+R19
+R20
+R21
+!i113 0
+R22
+R7
+Xfp_mult_sv_unit
+R10
+R11
+R12
+R13
+VclbU^<^Tf`D_b1a2]^Hz62
+r1
+!s85 0
+!i10b 1
+!s100 lU_ROacFX:LaDW[oZa3<21
+IclbU^<^Tf`D_b1a2]^Hz62
+!i103 1
+S1
+R2
+R24
+R25
+R26
+!i122 23
+L0 14 0
+R18
+31
+R19
+R20
+R21
+!i113 0
+R22
+R7
+vfp_mult_tb
+R10
+R11
+DXx4 work 18 fp_mult_tb_sv_unit 0 22 G`zV_P7>:DQ1:o[U__ggQ1
+R13
+R14
+r1
+!s85 0
+!i10b 1
+!s100 >@[7Rh<?GSmORz]TMm2Uz0
+IoVFAidBNTR992T9caI>Lf3
+!s105 fp_mult_tb_sv_unit
+S1
+R2
+Z27 w1748555218
+Z28 8fp_mult_tb.sv
+Z29 Ffp_mult_tb.sv
+!i122 23
+L0 3 216
+R18
+31
+R19
+R20
+R21
+!i113 0
+R22
+R7
+Xfp_mult_tb_sv_unit
+R10
+R11
+R13
+VG`zV_P7>:DQ1:o[U__ggQ1
+r1
+!s85 0
+!i10b 1
+!s100 dl8oPBdY_IbLBzL<=BEGH1
+IG`zV_P7>:DQ1:o[U__ggQ1
+!i103 1
+S1
+R2
+R27
+R28
+R29
+Z30 Fmultiplication.sv
+!i122 23
+Z31 L0 5 0
+R18
+31
+R19
+R20
+R21
+!i113 0
+R22
+R7
+vfp_mult_top
+R10
+R11
+R13
+!i10b 1
+!s100 FUQ]MfN1@`H8>=eTUSbCE2
+IQIGMj`J8<ImPkl>hdb]Ca2
+S1
+R2
+w1748284245
+8fp_mult_top.sv
+Ffp_mult_top.sv
+!i122 23
+L0 2 36
+R14
+R18
+r1
+!s85 0
+31
+R19
+R20
+R21
+!i113 0
+R22
+R7
+Xmultiplication_sv_unit
+R10
+R11
+R13
+VlakKfX2WU;G;B_bT9zCRM2
+r1
+!s85 0
+!i10b 1
+!s100 o@_hja0LXKLZ;]EdHb?[g3
+IlakKfX2WU;G;B_bT9zCRM2
+!i103 1
+S1
+R2
+w1748339902
+8multiplication.sv
+R30
+!i122 23
+R31
+R18
+31
+R19
+R20
+R21
+!i113 0
+R22
+R7
+vnormalize_mult
+R10
+R11
+R13
+!i10b 1
+!s100 z:ISV>^727R5fmj9S^]PH0
+IoCKif60l^@nd?]egO5bG<0
+S1
+R2
+w1748554184
+8normalize_mult.sv
+Fnormalize_mult.sv
+!i122 23
+L0 1 26
+R14
+R18
+r1
+!s85 0
+31
+R19
+R20
+R21
+!i113 0
+R22
+R7
+vround_mult
+R10
+R11
+R12
+DXx4 work 18 round_mult_sv_unit 0 22 YKA;hF=O2]`7lOXmUYLKM2
+R13
+R14
+r1
+!s85 0
+!i10b 1
+!s100 2Q7=NdB[^R=@7OIc>CzFH3
+IDa;z<^HGHTaJg]?o<cN_53
+!s105 round_mult_sv_unit
+S1
+R2
+Z32 w1748601194
+Z33 8round_mult.sv
+Z34 Fround_mult.sv
+!i122 23
+L0 3 83
+R18
+31
+R19
+R20
+R21
+!i113 0
+R22
+R7
+Xround_mult_sv_unit
+R10
+R11
+R12
+R13
+VYKA;hF=O2]`7lOXmUYLKM2
+r1
+!s85 0
+!i10b 1
+!s100 J?mlbIG]9;74WbTG4K[PF1
+IYKA;hF=O2]`7lOXmUYLKM2
+!i103 1
+S1
+R2
+R32
+R33
+R34
+!i122 23
+R23
+R18
+31
+R19
+R20
+R21
+!i113 0
+R22
+R7
+Xrounding_pkg
+R10
+R11
+R13
+!i10b 1
+!s100 7dM3^Neo2@78P[6Dc1P3g1
+I=UMR;mD65_EgZf5^T9Rii1
+S1
+R2
+R24
+R25
+R26
+!i122 23
+R23
+V=UMR;mD65_EgZf5^T9Rii1
+R18
+r1
+!s85 0
+31
+R19
+R20
+R21
+!i113 0
+R22
+R7
+vtest_status_bits
+R10
+R11
+R13
+!i10b 1
+!s100 lmBLPbXm]5LQUBdm<jfEg1
+IBWDeI=j3=zU1KI>ckjBB[3
+S1
+R2
+w1748554728
+8test_status_bits.sv
+Ftest_status_bits.sv
+!i122 23
+L0 1 21
+R14
+R18
+r1
+!s85 0
+31
+R19
+R20
+R21
+!i113 0
+R22
+R7
+vtest_status_z_combinations
+R10
+R11
+R13
+!i10b 1
+!s100 aHT=`G80HSSD]3`6`Z_;b0
+IZ4=lZ^m=WC3fmjZDb2JkN0
+S1
+R2
+w1748554738
+8test_status_z_combinations.sv
+Ftest_status_z_combinations.sv
+!i122 23
+L0 2 31
+R14
+R18
+r1
+!s85 0
+31
+R19
+R20
+R21
+!i113 0
+R22
+R7

@@ -1,22 +1,27 @@
 `timescale 1ns/1ps
-include "multiplication.sv"
+`include "multiplication.sv"
 module fp_mult_tb;
 
-logic clk, rst_n;
+logic clk, rst;
 logic [31:0] a, b;
 logic [2:0] rnd;
 logic [31:0] z;
 logic [7:0] status;
 
-fp_mult dut (
+fp_mult_top dut (
     .clk(clk),
-    .rst_n(rst_n),
+    .rst(rst),
     .a(a),
     .b(b),
     .rnd(rnd),
     .z(z),
     .status(status)
 );
+
+bind dut test_status_bits dutbound (clk, status);
+
+bind dut test_status_z_combinations dutbound_z (clk, status, z ,a ,b);
+
 
 typedef enum logic[3:0] {
     neg_SNAN = 4'b0000,
@@ -74,9 +79,9 @@ always #5 clk = ~clk;
 
 initial begin
   clk = 0;
-  rst_n = 0;
+  rst = 0;
   #20;
-  rst_n = 1;
+  rst = 1;
 end
 
 function string rnd_to_string(input logic [2:0] rnd);
@@ -107,7 +112,7 @@ initial begin
     corner_case_t case_a, case_b;
 
     logic [31:0] expected_z;    
-    @(posedge rst_n);
+    @(posedge rst);
 
     a = $urandom();
     b = $urandom();

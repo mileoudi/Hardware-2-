@@ -9,14 +9,14 @@ module normalize_mult (
 
 always @(*) 
 begin
-	norm_exponent=S;
 	if (P[47]) begin
+		norm_exponent=S+ 1'b1;
 		norm_mantissa=P[46:24];
 		guard=P[23];
 		sticky=|P[22:0];
-		norm_exponent=S+1;
 	end 
 	else begin
+		norm_exponent=S;
 		norm_mantissa=P[45:23];
 		guard=P[22];
 		sticky=|P[21:0];
