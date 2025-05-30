@@ -3,23 +3,22 @@ import rounding_pkg::*;
 module round_mult (
 	input logic pipe_sign,
 	input logic [9:0] pipe_exponent,
-	input logic [22:0] pipe_mantissa,
+	input logic [23:0] pipe_mantissa,
 	input logic pipe_guard, pipe_sticky, 
 	input logic [2:0] round_mode,
 
 	output logic round_sign,
 	output logic [9:0] round_exponent,
-	output logic [22:0] round_mantissa,
+	output logic [23:0] round_mantissa,
 	output logic round_guard, round_sticky,
 	output logic [31:0] z_calc,
 	output logic inexact
 );
 
-logic [25:0] mantissa_extended; 
-logic [22:0] final_mantissa;
+logic [24:0] mantissa_extended; 
 
 always_comb begin 
-	mantissa_extended = {1'b1, pipe_mantissa, pipe_guard, pipe_sticky}; // Extend mantissa to 25 bits
+	mantissa_extended = {1'b0, pipe_mantissa}; // Extend mantissa to 25 bits
 	inexact=(pipe_guard|pipe_sticky);
 	
 	case (round_mode)
@@ -46,13 +45,13 @@ always_comb begin
 		end
 
 		near_up: begin
-			if(pipe_guard) begin
+			if(pipe_guard&&(pipe_sticky||mantissa_extended[0])) begin
 				mantissa_extended=mantissa_extended+1;
 			end
 		end
 
 		away_zero: begin 
-			if(!pipe_sign && inexact) begin
+			if(inexact) begin
 				mantissa_extended=mantissa_extended+1;
 			end
 		end
@@ -64,22 +63,19 @@ always_comb begin
 		end
 	endcase
 	
-	if (mantissa_extended[25] == 1'b1) begin
-        	round_mantissa = mantissa_extended[24:2]; 
+	if (mantissa_extended[24] == 1'b1) begin
+        	round_mantissa = mantissa_extended>>1; 
         	round_exponent = pipe_exponent + 1;  
-			round_guard    = mantissa_extended[1];
-        	round_sticky   = mantissa_extended[0];
     	end 
 	else begin
-        	round_mantissa = mantissa_extended[23:1];   
-        	round_exponent = pipe_exponent; 
-			round_guard = pipe_guard;
-        	round_sticky = pipe_sticky;   
+        	round_mantissa = mantissa_extended;   
+        	round_exponent = pipe_exponent;   
     	end
-	final_mantissa = mantissa_extended[23:1];
-
+	
 	round_sign = pipe_sign;
-	z_calc = {round_sign, round_exponent[7:0], final_mantissa};
+	round_guard = pipe_guard;
+	round_sticky = pipe_sticky;
+	z_calc = {round_sign, round_exponent[7:0], round_mantissa[22:0]};	
 
 end
 endmodule

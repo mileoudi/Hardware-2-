@@ -1,6 +1,11 @@
 # vsim -c fp_mult_tb -do "run -all; quit" 
-# Start time: 13:33:31 on May 30,2025
+# Start time: 17:52:38 on May 30,2025
 # ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: fp_mult.sv(83): (vopt-2241) Connection width does not match width of port 'pipe_mantissa'. The port definition is at: round_mult.sv(6).
+# ** Warning: fp_mult.sv(83): (vopt-2241) Connection width does not match width of port 'round_mantissa'. The port definition is at: round_mult.sv(12).
+# ** Warning: fp_mult.sv(113): (vopt-2685) [TFMPC] - Too few port connections for 'exception_handler'.  Expected 15, found 14.
+# ** Warning: fp_mult.sv(113): (vopt-2718) [TFMPC] - Missing connection for port 'k'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
 # //  Questa Intel Starter FPGA Edition-64
 # //  Version 2023.3 win64 Jul 17 2023
 # //
@@ -24,17 +29,17 @@
 # Loading work.fp_mult_tb(fast)
 # run -all
 # Testing with rnd=000
-# FAIL: a=e3337da4, b=1684c7c6, rnd=000, got z=41000000, expected z=ba3a31b4
+# FAIL: a=e3337da4, b=1684c7c6, rnd=000, got z=40800000, expected z=ba3a31b4
 # Testing with rnd=001
-# FAIL: a=e3337da4, b=1684c7c6, rnd=001, got z=baf46368, expected z=ba3a31b4
+# PASS: a=e3337da4, b=1684c7c6, rnd=001, z=ba3a31b4
 # Testing with rnd=010
-# FAIL: a=e3337da4, b=1684c7c6, rnd=010, got z=baf46368, expected z=ba3a31b4
+# PASS: a=e3337da4, b=1684c7c6, rnd=010, z=ba3a31b4
 # Testing with rnd=011
-# FAIL: a=e3337da4, b=1684c7c6, rnd=011, got z=baf46369, expected z=ba3a31b5
+# PASS: a=e3337da4, b=1684c7c6, rnd=011, z=ba3a31b5
 # Testing with rnd=100
-# FAIL: a=e3337da4, b=1684c7c6, rnd=100, got z=baf46368, expected z=ba3a31b4
+# PASS: a=e3337da4, b=1684c7c6, rnd=100, z=ba3a31b4
 # Testing with rnd=101
-# FAIL: a=e3337da4, b=1684c7c6, rnd=101, got z=baf46368, expected z=ba3a31b5
+# PASS: a=e3337da4, b=1684c7c6, rnd=101, z=ba3a31b5
 # FAIL: a=ffc00001 (neg_SNAN), b=ffc00001 (neg_SNAN), got z=ff800000, expected z=7f800000
 # FAIL: a=ffc00001 (neg_SNAN), b=7fc00001 (pos_SNAN), got z=7f800000, expected z=ff800000
 # FAIL: a=ffc00001 (neg_SNAN), b=ffe00000 (neg_QNAN), got z=ff800000, expected z=7f800000
@@ -113,8 +118,8 @@
 # FAIL: a=bf800000 (neg_normal), b=7fe00000 (pos_QNAN), got z=7f800000, expected z=ff800000
 # FAIL: a=bf800000 (neg_normal), b=ff800000 (neg_INF), got z=ff800000, expected z=7f800000
 # FAIL: a=bf800000 (neg_normal), b=7f800000 (pos_INF), got z=7f800000, expected z=ff800000
-# FAIL: a=bf800000 (neg_normal), b=bf800000 (neg_normal), got z=80800000, expected z=3f800000
-# FAIL: a=bf800000 (neg_normal), b=3f800000 (pos_normal), got z=40000000, expected z=bf800000
+# FAIL: a=bf800000 (neg_normal), b=bf800000 (neg_normal), got z=ff800000, expected z=3f800000
+# FAIL: a=bf800000 (neg_normal), b=3f800000 (pos_normal), got z=3f800000, expected z=bf800000
 # FAIL: a=bf800000 (neg_normal), b=80000001 (neg_denormal), got z=80000000, expected z=00000000
 # FAIL: a=bf800000 (neg_normal), b=00000001 (pos_denormal), got z=00000000, expected z=80000000
 # FAIL: a=bf800000 (neg_normal), b=80000000 (neg_zero), got z=80000000, expected z=00000000
@@ -125,8 +130,8 @@
 # FAIL: a=3f800000 (pos_normal), b=7fe00000 (pos_QNAN), got z=ff800000, expected z=7f800000
 # FAIL: a=3f800000 (pos_normal), b=ff800000 (neg_INF), got z=7f800000, expected z=ff800000
 # FAIL: a=3f800000 (pos_normal), b=7f800000 (pos_INF), got z=ff800000, expected z=7f800000
-# FAIL: a=3f800000 (pos_normal), b=bf800000 (neg_normal), got z=00800000, expected z=bf800000
-# FAIL: a=3f800000 (pos_normal), b=3f800000 (pos_normal), got z=c0000000, expected z=3f800000
+# FAIL: a=3f800000 (pos_normal), b=bf800000 (neg_normal), got z=7f800000, expected z=bf800000
+# FAIL: a=3f800000 (pos_normal), b=3f800000 (pos_normal), got z=bf800000, expected z=3f800000
 # FAIL: a=3f800000 (pos_normal), b=80000001 (neg_denormal), got z=00000000, expected z=80000000
 # FAIL: a=3f800000 (pos_normal), b=00000001 (pos_denormal), got z=80000000, expected z=00000000
 # FAIL: a=3f800000 (pos_normal), b=80000000 (neg_zero), got z=00000000, expected z=80000000
@@ -151,3 +156,31 @@
 # PASS: a=00000001 (pos_denormal), b=7f800000 (pos_INF), z=7f800000
 # FAIL: a=00000001 (pos_denormal), b=bf800000 (neg_normal), got z=00000000, expected z=80000000
 # FAIL: a=00000001 (pos_denormal), b=3f800000 (pos_normal), got z=80000000, expected z=00000000
+# FAIL: a=00000001 (pos_denormal), b=80000001 (neg_denormal), got z=00000000, expected z=80000000
+# FAIL: a=00000001 (pos_denormal), b=00000001 (pos_denormal), got z=80000000, expected z=00000000
+# FAIL: a=00000001 (pos_denormal), b=80000000 (neg_zero), got z=00000000, expected z=80000000
+# FAIL: a=00000001 (pos_denormal), b=00000000 (pos_zero), got z=80000000, expected z=00000000
+# PASS: a=80000000 (neg_zero), b=ffc00001 (neg_SNAN), z=7f800000
+# PASS: a=80000000 (neg_zero), b=7fc00001 (pos_SNAN), z=7f800000
+# PASS: a=80000000 (neg_zero), b=ffe00000 (neg_QNAN), z=7f800000
+# PASS: a=80000000 (neg_zero), b=7fe00000 (pos_QNAN), z=7f800000
+# PASS: a=80000000 (neg_zero), b=ff800000 (neg_INF), z=7f800000
+# PASS: a=80000000 (neg_zero), b=7f800000 (pos_INF), z=7f800000
+# FAIL: a=80000000 (neg_zero), b=bf800000 (neg_normal), got z=80000000, expected z=00000000
+# FAIL: a=80000000 (neg_zero), b=3f800000 (pos_normal), got z=00000000, expected z=80000000
+# FAIL: a=80000000 (neg_zero), b=80000001 (neg_denormal), got z=80000000, expected z=00000000
+# FAIL: a=80000000 (neg_zero), b=00000001 (pos_denormal), got z=00000000, expected z=80000000
+# FAIL: a=80000000 (neg_zero), b=80000000 (neg_zero), got z=80000000, expected z=00000000
+# FAIL: a=80000000 (neg_zero), b=00000000 (pos_zero), got z=00000000, expected z=80000000
+# PASS: a=00000000 (pos_zero), b=ffc00001 (neg_SNAN), z=7f800000
+# PASS: a=00000000 (pos_zero), b=7fc00001 (pos_SNAN), z=7f800000
+# PASS: a=00000000 (pos_zero), b=ffe00000 (neg_QNAN), z=7f800000
+# PASS: a=00000000 (pos_zero), b=7fe00000 (pos_QNAN), z=7f800000
+# PASS: a=00000000 (pos_zero), b=ff800000 (neg_INF), z=7f800000
+# PASS: a=00000000 (pos_zero), b=7f800000 (pos_INF), z=7f800000
+# FAIL: a=00000000 (pos_zero), b=bf800000 (neg_normal), got z=00000000, expected z=80000000
+# FAIL: a=00000000 (pos_zero), b=3f800000 (pos_normal), got z=80000000, expected z=00000000
+# FAIL: a=00000000 (pos_zero), b=80000001 (neg_denormal), got z=00000000, expected z=80000000
+# FAIL: a=00000000 (pos_zero), b=00000001 (pos_denormal), got z=80000000, expected z=00000000
+# FAIL: a=00000000 (pos_zero), b=80000000 (neg_zero), got z=00000000, expected z=80000000
+# FAIL: a=00000000 (pos_zero), b=00000000 (pos_zero), got z=80000000, expected z=00000000

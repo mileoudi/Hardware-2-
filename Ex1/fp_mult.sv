@@ -1,12 +1,12 @@
 package rounding_pkg;
 
 typedef enum logic [2:0] {
-    IEEE_near = 3'b000,
-    IEEE_zero = 3'b001,
-    IEEE_pinf = 3'b010,
-    IEEE_ninf = 3'b011,
-    near_up = 3'b100,
-	away_zero = 3'b101
+    IEEE_near,
+    IEEE_zero,
+    IEEE_pinf,
+    IEEE_ninf,
+    near_up,
+	away_zero
 } round_mode_t;
 
 endpackage
@@ -37,9 +37,8 @@ logic [22:0] pipe_mantissa;
 logic pipe_guard, pipe_sticky; 
 
 logic [2:0] round_mode;
-always_comb begin
-    round_mode = rnd;
-end
+assign round_mode = rnd;
+
 logic round_sign;
 logic [9:0] round_exponent;
 logic [22:0] round_mantissa;
@@ -49,7 +48,6 @@ logic overflow = 1'b0;
 logic underflow= 1'b0;
 
 logic [31:0] z_calc;
-logic [31:0] k;
 logic zero_f, inf_f, nan_f, tiny_f, huge_f, inexact_f;
 
 assign sign = a[31] ^ b[31];
@@ -121,7 +119,6 @@ exception_mult exception_handler(
         .inexact(inexact),
         .round_mode(round_mode),
         .z(z),
-		.k(k),
         .zero_f(zero_f),
         .inf_f(inf_f),
         .nan_f(nan_f),
