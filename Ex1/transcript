@@ -1,5 +1,5 @@
 # vsim -c fp_mult_tb -do "run -all; quit" 
-# Start time: 23:21:22 on May 31,2025
+# Start time: 23:34:14 on May 31,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # //  Questa Intel Starter FPGA Edition-64
 # //  Version 2023.3 win64 Jul 17 2023
@@ -242,44 +242,3 @@
 # PASS: a=80000001 (neg_denormal), b=ff800000 (neg_INF), z=7f800000
 # PASS: a=80000001 (neg_denormal), b=7f800000 (pos_INF), z=7f800000
 # FAIL: a=80000001 (neg_denormal), b=bf800000 (neg_normal), got z=80000000, expected z=00000000
-# FAIL: a=80000001 (neg_denormal), b=3f800000 (pos_normal), got z=00000000, expected z=80000000
-# FAIL: a=80000001 (neg_denormal), b=80000001 (neg_denormal), got z=80000000, expected z=00000000
-# FAIL: a=80000001 (neg_denormal), b=00000001 (pos_denormal), got z=00000000, expected z=80000000
-# FAIL: a=80000001 (neg_denormal), b=80000000 (neg_zero), got z=80000000, expected z=00000000
-# FAIL: a=80000001 (neg_denormal), b=00000000 (pos_zero), got z=00000000, expected z=80000000
-# PASS: a=00000001 (pos_denormal), b=ff800001 (neg_SNAN), z=7f800000
-# PASS: a=00000001 (pos_denormal), b=7f800001 (pos_SNAN), z=7f800000
-# PASS: a=00000001 (pos_denormal), b=ffc00001 (neg_QNAN), z=7f800000
-# PASS: a=00000001 (pos_denormal), b=7fc00001 (pos_QNAN), z=7f800000
-# PASS: a=00000001 (pos_denormal), b=ff800000 (neg_INF), z=7f800000
-# PASS: a=00000001 (pos_denormal), b=7f800000 (pos_INF), z=7f800000
-# FAIL: a=00000001 (pos_denormal), b=bf800000 (neg_normal), got z=00000000, expected z=80000000
-# FAIL: a=00000001 (pos_denormal), b=3f800000 (pos_normal), got z=80000000, expected z=00000000
-# FAIL: a=00000001 (pos_denormal), b=80000001 (neg_denormal), got z=00000000, expected z=80000000
-# FAIL: a=00000001 (pos_denormal), b=00000001 (pos_denormal), got z=80000000, expected z=00000000
-# FAIL: a=00000001 (pos_denormal), b=80000000 (neg_zero), got z=00000000, expected z=80000000
-# FAIL: a=00000001 (pos_denormal), b=00000000 (pos_zero), got z=80000000, expected z=00000000
-# PASS: a=80000000 (neg_zero), b=ff800001 (neg_SNAN), z=7f800000
-# PASS: a=80000000 (neg_zero), b=7f800001 (pos_SNAN), z=7f800000
-# PASS: a=80000000 (neg_zero), b=ffc00001 (neg_QNAN), z=7f800000
-# PASS: a=80000000 (neg_zero), b=7fc00001 (pos_QNAN), z=7f800000
-# PASS: a=80000000 (neg_zero), b=ff800000 (neg_INF), z=7f800000
-# PASS: a=80000000 (neg_zero), b=7f800000 (pos_INF), z=7f800000
-# FAIL: a=80000000 (neg_zero), b=bf800000 (neg_normal), got z=80000000, expected z=00000000
-# FAIL: a=80000000 (neg_zero), b=3f800000 (pos_normal), got z=00000000, expected z=80000000
-# FAIL: a=80000000 (neg_zero), b=80000001 (neg_denormal), got z=80000000, expected z=00000000
-# FAIL: a=80000000 (neg_zero), b=00000001 (pos_denormal), got z=00000000, expected z=80000000
-# FAIL: a=80000000 (neg_zero), b=80000000 (neg_zero), got z=80000000, expected z=00000000
-# FAIL: a=80000000 (neg_zero), b=00000000 (pos_zero), got z=00000000, expected z=80000000
-# PASS: a=00000000 (pos_zero), b=ff800001 (neg_SNAN), z=7f800000
-# PASS: a=00000000 (pos_zero), b=7f800001 (pos_SNAN), z=7f800000
-# PASS: a=00000000 (pos_zero), b=ffc00001 (neg_QNAN), z=7f800000
-# PASS: a=00000000 (pos_zero), b=7fc00001 (pos_QNAN), z=7f800000
-# PASS: a=00000000 (pos_zero), b=ff800000 (neg_INF), z=7f800000
-# PASS: a=00000000 (pos_zero), b=7f800000 (pos_INF), z=7f800000
-# FAIL: a=00000000 (pos_zero), b=bf800000 (neg_normal), got z=00000000, expected z=80000000
-# FAIL: a=00000000 (pos_zero), b=3f800000 (pos_normal), got z=80000000, expected z=00000000
-# FAIL: a=00000000 (pos_zero), b=80000001 (neg_denormal), got z=00000000, expected z=80000000
-# FAIL: a=00000000 (pos_zero), b=00000001 (pos_denormal), got z=80000000, expected z=00000000
-# FAIL: a=00000000 (pos_zero), b=80000000 (neg_zero), got z=00000000, expected z=80000000
-# FAIL: a=00000000 (pos_zero), b=00000000 (pos_zero), got z=80000000, expected z=00000000

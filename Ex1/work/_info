@@ -1,8 +1,12 @@
 m255
 K4
 z2
-!s12c _opt60
+!s12c _opt62
 Z0 !s99 nomlopt
+!s12c _opt61
+R0
+!s12c _opt60
+R0
 !s12c _opt59
 R0
 !s12c _opt58
@@ -896,6 +900,32 @@ R8
 R9
 n@_opt60
 R10
+R4
+T_opt61
+!s110 1748723337
+VQ>OAWNo_V?Q68]YO3ZV`02
+R5
+=1-14857f420d15-683b6689-22d-57cc
+R0
+R6
+R11
+R8
+R9
+n@_opt61
+R10
+R4
+T_opt62
+!s110 1748723655
+VkVal_VAJ77JD=ON`=QW<N3
+R5
+=1-14857f420d15-683b67c6-368-32c0
+R0
+R6
+R11
+R8
+R9
+n@_opt62
+R10
 T_opt7
 !s110 1748600035
 VPa9V4_[T=i>N4HNdd8K=j1
@@ -995,7 +1025,7 @@ Z26 2fp_mult.sv|normalize_mult.sv|round_mult.sv|multiplication.sv|fp_mult_top.sv
 R13
 R14
 DXx4 work 15 fp_mult_sv_unit 0 22 2m713K[=iz8CN[g@fU=PX0
-Z27 !s110 1748722880
+Z27 !s110 1748723653
 R16
 r1
 !s85 0
@@ -1008,11 +1038,11 @@ R4
 Z28 w1748722773
 Z29 8fp_mult.sv
 Z30 Ffp_mult.sv
-!i122 21
+!i122 23
 L0 16 113
 R20
 31
-Z31 !s108 1748722880.000000
+Z31 !s108 1748723653.000000
 Z32 !s107 fp_mult_tb.sv|test_status_bits.sv|test_status_z_combinations.sv|fp_mult_top.sv|multiplication.sv|round_mult.sv|normalize_mult.sv|fp_mult.sv|
 Z33 !s90 fp_mult.sv|normalize_mult.sv|round_mult.sv|multiplication.sv|fp_mult_top.sv|test_status_z_combinations.sv|test_status_bits.sv|fp_mult_tb.sv|
 !i113 0
@@ -1035,7 +1065,7 @@ R4
 R28
 R29
 R30
-!i122 21
+!i122 23
 L0 14 0
 R20
 31
@@ -1062,7 +1092,7 @@ R4
 Z34 w1748691826
 Z35 8fp_mult_tb.sv
 Z36 Ffp_mult_tb.sv
-!i122 21
+!i122 23
 L0 3 216
 R20
 31
@@ -1089,7 +1119,7 @@ R34
 R35
 R36
 Z37 Fmultiplication.sv
-!i122 21
+!i122 23
 Z38 L0 5 0
 R20
 31
@@ -1111,7 +1141,7 @@ R4
 w1748284245
 8fp_mult_top.sv
 Ffp_mult_top.sv
-!i122 21
+!i122 23
 L0 2 36
 R16
 R20
@@ -1140,7 +1170,7 @@ R4
 w1748339902
 8multiplication.sv
 R37
-!i122 21
+!i122 23
 R38
 R20
 31
@@ -1162,7 +1192,7 @@ R4
 w1748554184
 8normalize_mult.sv
 Fnormalize_mult.sv
-!i122 21
+!i122 23
 L0 1 26
 R16
 R20
@@ -1193,7 +1223,7 @@ R4
 Z39 w1748720608
 Z40 8round_mult.sv
 Z41 Fround_mult.sv
-!i122 21
+!i122 23
 L0 3 76
 R20
 31
@@ -1220,7 +1250,7 @@ R4
 R39
 R40
 R41
-!i122 21
+!i122 23
 R25
 R20
 31
@@ -1242,7 +1272,7 @@ R4
 R28
 R29
 R30
-!i122 21
+!i122 23
 R25
 Vj>1HSVB@]fkCEEL`d@Q<j0
 R20
@@ -1267,7 +1297,7 @@ R4
 w1748685626
 8test_status_bits.sv
 Ftest_status_bits.sv
-!i122 21
+!i122 23
 L0 1 21
 R16
 R20
@@ -1292,7 +1322,7 @@ R4
 w1748686001
 8test_status_z_combinations.sv
 Ftest_status_z_combinations.sv
-!i122 21
+!i122 23
 L0 2 42
 R16
 R20

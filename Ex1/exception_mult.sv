@@ -51,7 +51,7 @@ case ({num_interp(a),num_interp(b)})
 	{ZERO, ZERO}, {ZERO, NORM}, {NORM, ZERO}:
 		begin
 			zero_f = 1;
-			z = {z_calc[31], z_num(ZERO)};
+			z = {1'b0, z_num(ZERO)};
 		end
 
 	{ZERO, INF}, {INF, ZERO}:
@@ -118,7 +118,7 @@ case ({num_interp(a),num_interp(b)})
 				end
 			IEEE_zero: 
 				begin
-				    z = {z_calc[31], z_num(ZERO)};
+				    z = {1'b0, z_num(ZERO)};
 				    zero_f = 1;
 				end
 
@@ -130,7 +130,7 @@ case ({num_interp(a),num_interp(b)})
 						end
 				    else
 						begin
-					    	z = {z_calc[31], z_num(ZERO)};
+					    	z = {1'b0, z_num(ZERO)};
 				    	    zero_f = 1;
 						end
 				end
@@ -156,14 +156,19 @@ case ({num_interp(a),num_interp(b)})
 
 	default: 
 	    begin
-                z = {z_calc[31], 31'b0};
+                z = {1'b0, 31'b0};
                 zero_f = 1'b1;
         end
     endcase
 
-	nan_f = 0;
-	if (z[30:23] == 8'h00 || z[30:23] == 8'h01)
-    z[22:0] = 0;
+    // Εξαναγκασμός σε sign=0 για NaN / Inf αποτελέσματα
+    if (z[30:23] == 8'hFF) z[31] = 1'b0;
+
+    // Καθαρισμός mantissa για subnormal/zero αποτελέσματα
+    if (z[30:23] == 8'h00 || z[30:23] == 8'h01) z[22:0] = 0;
+
+    // Πάντα nan_f=0
+    nan_f = 0;
 
 end
 
