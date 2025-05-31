@@ -56,14 +56,14 @@ case ({num_interp(a),num_interp(b)})
 
 	{ZERO, INF}, {INF, ZERO}:
 		begin
-			inf_f = 1; 
+			inf_f = 1;
 			z = {1'b0, z_num(INF)}; 
 		end
 		
 	{INF, INF}, {INF, NORM}, {NORM, INF}:
 		begin
-			inf_f = 1; 
-			z = {z_calc[31], z_num(INF)};
+			inf_f = 1;       
+			z = {1'b0, z_num(INF)}; 
 		end
 	
 	{NORM, NORM}:
@@ -74,7 +74,7 @@ case ({num_interp(a),num_interp(b)})
 					case(round_mode)
 					IEEE_near, away_zero: 
 						begin
-							z = {z_calc[31], z_num(INF)};
+							z = {1'b0, z_num(INF)};
 							inf_f = 1;
 						end 
 					IEEE_zero: 
@@ -85,7 +85,7 @@ case ({num_interp(a),num_interp(b)})
 						begin
 							if( !z_calc[31] ) 
 								begin
-									z = {z_calc[31], z_num(INF)};
+									z = {1'b0, z_num(INF)};
 									inf_f = 1;
 								end
 							else
@@ -102,7 +102,7 @@ case ({num_interp(a),num_interp(b)})
 								end
 							else
 								begin
-									z = {z_calc[31], z_num(INF)};
+									z = {1'b0, z_num(INF)};
 									inf_f = 1;
 								end
 						end
@@ -161,7 +161,9 @@ case ({num_interp(a),num_interp(b)})
         end
     endcase
 
-nan_f = (z_calc[30:23] == 8'hFF & z_calc[22:0] > 23'b0);
+	nan_f = 0;
+	if (z[30:23] == 8'h00 || z[30:23] == 8'h01)
+    z[22:0] = 0;
 
 end
 

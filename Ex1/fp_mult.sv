@@ -24,6 +24,7 @@ module fp_mult (
 );
 
 logic sign;
+logic [31:0] a_in, b_in;
 logic [9:0] exp_add; 
 logic [47:0] mantissa_mult;
 
@@ -42,7 +43,6 @@ assign round_mode = rnd;
 logic round_sign;
 logic [9:0] round_exponent;
 logic [22:0] round_mantissa;
-logic round_guard, round_sticky;
 
 logic overflow = 1'b0;
 logic underflow= 1'b0;
@@ -50,9 +50,16 @@ logic underflow= 1'b0;
 logic [31:0] z_calc;
 logic zero_f, inf_f, nan_f, tiny_f, huge_f, inexact_f;
 
-assign sign = a[31] ^ b[31];
-assign exp_add = ({2'b00, a[30:23]}+{2'b00, b[30:23]})-10'd127;
-assign mantissa_mult = {1'b1, a[22:0]}*{1'b1, b[22:0]};
+always_comb begin
+  a_in = a;
+  b_in = b;
+  if (a[30:23] == 8'b0) a_in[22:0] = 0;
+  if (b[30:23] == 8'b0) b_in[22:0] = 0;
+end
+
+assign sign = a_in[31] ^ b_in[31];
+assign exp_add = ({2'b00, a_in[30:23]} + {2'b00, b_in[30:23]}) - 10'd127;
+assign mantissa_mult = {1'b1, a_in[22:0]} * {1'b1, b_in[22:0]};
 
 normalize_mult norm(
 	.P(mantissa_mult),
@@ -91,28 +98,18 @@ round_mult round(
     	.round_sign(round_sign),
     	.round_exponent(round_exponent),
     	.round_mantissa(round_mantissa),
-    	.round_guard(round_guard),
-    	.round_sticky(round_sticky),
 		.z_calc(z_calc),
     	.inexact(inexact)
 );
 
 always_comb begin
-
-    if (round_exponent[7:0] == 8'b1111_1111) 
-		overflow = 1; 
-    else 
-		overflow = 0;
-	    
-    if (round_exponent[7:0] == 8'b0000_0000)
-		underflow = 1; 
-    else 
-		underflow = 0;
+    overflow = (round_exponent[7:0] == 8'hFF);
+    underflow = (round_exponent[7:0] == 8'h00);
 end
 
 exception_mult exception_handler(
-        .a(a),
-        .b(b),
+        .a(a_in),
+        .b(b_in),
         .z_calc(z_calc),
         .overflow(overflow),
         .underflow(underflow),

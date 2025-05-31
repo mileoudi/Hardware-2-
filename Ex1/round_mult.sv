@@ -10,7 +10,6 @@ module round_mult (
     output logic round_sign,
     output logic [9:0] round_exponent,
     output logic [22:0] round_mantissa,
-    output logic round_guard, round_sticky,
     output logic [31:0] z_calc,
     output logic inexact
 );
@@ -30,7 +29,7 @@ always_comb begin
         end
 
         IEEE_zero: begin
-    
+        // Do nothing
         end
         
         IEEE_pinf: begin
@@ -72,9 +71,7 @@ always_comb begin
             round_exponent = pipe_exponent; 
     end
     
-    round_sign = pipe_sign;
-	round_guard = pipe_guard;
-    round_sticky = pipe_sticky;   
+    round_sign = pipe_sign;   
     z_calc = {round_sign, round_exponent[7:0], round_mantissa[22:0]};
 
 end

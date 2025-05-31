@@ -24,28 +24,22 @@ bind dut test_status_z_combinations dutbound_z (clk, status, z ,a ,b);
 
 
 typedef enum logic[3:0] {
-    neg_SNAN = 4'b0000,
-    pos_SNAN = 4'b0001,
-    neg_QNAN = 4'b0010,
-    pos_QNAN = 4'b0011,
-    neg_INF = 4'b0100,
-    pos_INF = 4'b0101,
-    neg_normal = 4'b0110,
-    pos_normal = 4'b0111,
-    neg_denormal = 4'b1000,
-    pos_denormal = 4'b1001,
-    neg_zero = 4'b1010,
-    pos_zero = 4'b1011
+      neg_SNAN, pos_SNAN,
+      neg_QNAN, pos_QNAN,
+      neg_INF, pos_INF,
+      neg_normal, pos_normal,
+      neg_denormal, pos_denormal,
+      neg_zero, pos_zero
 } corner_case_t;
 
 function logic [31:0] corner_case_to_bits(corner_case_t ccase);
     case (ccase)
-        neg_SNAN:  return 32'hFFC00001; 
-        pos_SNAN:  return 32'h7FC00001; 
-        neg_QNAN:  return 32'hFFE00000; 
-        pos_QNAN:  return 32'h7FE00000; 
+        neg_SNAN:  return 32'hFF800001; 
+        pos_SNAN:  return 32'h7F800001;
+        neg_QNAN:  return 32'hFFC00001;
+        pos_QNAN:  return 32'h7FC00001; 
         neg_INF:   return 32'hFF800000; 
-        pos_INF:   return 32'h7F800000; 
+        pos_INF:   return 32'h7F800000;
         neg_normal: return 32'hBF800000; 
         pos_normal: return 32'h3F800000; 
         neg_denormal: return 32'h80000001; 
@@ -102,9 +96,6 @@ corner_case_t cases[12] = '{neg_SNAN, pos_SNAN, neg_QNAN, pos_QNAN,
                                       neg_denormal, pos_denormal, 
                                       neg_zero, pos_zero};
 
-int i, j;
-corner_case_t case_a, case_b;
-
 logic [31:0] expected_z;
 
 initial begin
@@ -114,10 +105,9 @@ initial begin
     logic [31:0] expected_z;    
     @(posedge rst);
 
-    a = $urandom();
-    b = $urandom();
-
 //IEEE_NEAR ROUNDING
+ a = $urandom(369);
+ b = $urandom();
   rnd = 3'b000; 
   repeat(3) @(posedge clk);
     
@@ -130,6 +120,8 @@ initial begin
       $display("PASS: a=%h, b=%h, rnd=%b, z=%h", a, b, rnd, z);
   end
 //IEEE_ZERO ROUNDING
+ a = $urandom();
+ b = $urandom();
   rnd = 3'b001; 
   repeat(3) @(posedge clk);
     
@@ -142,6 +134,8 @@ initial begin
       $display("PASS: a=%h, b=%h, rnd=%b, z=%h", a, b, rnd, z);
   end
 //IEEE_PINF ROUNDING
+ a = $urandom();
+ b = $urandom();
   rnd = 3'b010; 
   repeat(3) @(posedge clk);
     
@@ -154,6 +148,8 @@ initial begin
       $display("PASS: a=%h, b=%h, rnd=%b, z=%h", a, b, rnd, z);
   end
 //IEEE_NINF ROUNDING
+ a = $urandom();
+ b = $urandom();
   rnd = 3'b011; 
   repeat(3) @(posedge clk);
     
@@ -166,6 +162,8 @@ initial begin
       $display("PASS: a=%h, b=%h, rnd=%b, z=%h", a, b, rnd, z);
   end
 //NEAR_UP ROUNDING
+ a = $urandom();
+ b = $urandom();
   rnd = 3'b100; 
   repeat(3) @(posedge clk);
     
@@ -178,7 +176,9 @@ initial begin
       $display("PASS: a=%h, b=%h, rnd=%b, z=%h", a, b, rnd, z);
   end
 
-//AWAY_ZERO ROUNDING  
+//AWAY_ZERO ROUNDING 
+ a = $urandom();
+ b = $urandom(); 
   rnd = 3'b101; 
   repeat(3) @(posedge clk);
     
