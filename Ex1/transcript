@@ -243,3 +243,43 @@
 # PASS: a=80000001 (neg_denormal), b=7f800000 (pos_INF), z=7f800000
 # FAIL: a=80000001 (neg_denormal), b=bf800000 (neg_normal), got z=80000000, expected z=00000000
 # FAIL: a=80000001 (neg_denormal), b=3f800000 (pos_normal), got z=00000000, expected z=80000000
+# FAIL: a=80000001 (neg_denormal), b=80000001 (neg_denormal), got z=80000000, expected z=00000000
+# FAIL: a=80000001 (neg_denormal), b=00000001 (pos_denormal), got z=00000000, expected z=80000000
+# FAIL: a=80000001 (neg_denormal), b=80000000 (neg_zero), got z=80000000, expected z=00000000
+# FAIL: a=80000001 (neg_denormal), b=00000000 (pos_zero), got z=00000000, expected z=80000000
+# PASS: a=00000001 (pos_denormal), b=ffc00001 (neg_SNAN), z=7f800000
+# PASS: a=00000001 (pos_denormal), b=7fc00001 (pos_SNAN), z=7f800000
+# PASS: a=00000001 (pos_denormal), b=ffe00000 (neg_QNAN), z=7f800000
+# PASS: a=00000001 (pos_denormal), b=7fe00000 (pos_QNAN), z=7f800000
+# PASS: a=00000001 (pos_denormal), b=ff800000 (neg_INF), z=7f800000
+# PASS: a=00000001 (pos_denormal), b=7f800000 (pos_INF), z=7f800000
+# FAIL: a=00000001 (pos_denormal), b=bf800000 (neg_normal), got z=00000000, expected z=80000000
+# FAIL: a=00000001 (pos_denormal), b=3f800000 (pos_normal), got z=80000000, expected z=00000000
+# FAIL: a=00000001 (pos_denormal), b=80000001 (neg_denormal), got z=00000000, expected z=80000000
+# FAIL: a=00000001 (pos_denormal), b=00000001 (pos_denormal), got z=80000000, expected z=00000000
+# FAIL: a=00000001 (pos_denormal), b=80000000 (neg_zero), got z=00000000, expected z=80000000
+# FAIL: a=00000001 (pos_denormal), b=00000000 (pos_zero), got z=80000000, expected z=00000000
+# PASS: a=80000000 (neg_zero), b=ffc00001 (neg_SNAN), z=7f800000
+# PASS: a=80000000 (neg_zero), b=7fc00001 (pos_SNAN), z=7f800000
+# PASS: a=80000000 (neg_zero), b=ffe00000 (neg_QNAN), z=7f800000
+# PASS: a=80000000 (neg_zero), b=7fe00000 (pos_QNAN), z=7f800000
+# PASS: a=80000000 (neg_zero), b=ff800000 (neg_INF), z=7f800000
+# PASS: a=80000000 (neg_zero), b=7f800000 (pos_INF), z=7f800000
+# FAIL: a=80000000 (neg_zero), b=bf800000 (neg_normal), got z=80000000, expected z=00000000
+# FAIL: a=80000000 (neg_zero), b=3f800000 (pos_normal), got z=00000000, expected z=80000000
+# FAIL: a=80000000 (neg_zero), b=80000001 (neg_denormal), got z=80000000, expected z=00000000
+# FAIL: a=80000000 (neg_zero), b=00000001 (pos_denormal), got z=00000000, expected z=80000000
+# FAIL: a=80000000 (neg_zero), b=80000000 (neg_zero), got z=80000000, expected z=00000000
+# FAIL: a=80000000 (neg_zero), b=00000000 (pos_zero), got z=00000000, expected z=80000000
+# PASS: a=00000000 (pos_zero), b=ffc00001 (neg_SNAN), z=7f800000
+# PASS: a=00000000 (pos_zero), b=7fc00001 (pos_SNAN), z=7f800000
+# PASS: a=00000000 (pos_zero), b=ffe00000 (neg_QNAN), z=7f800000
+# PASS: a=00000000 (pos_zero), b=7fe00000 (pos_QNAN), z=7f800000
+# PASS: a=00000000 (pos_zero), b=ff800000 (neg_INF), z=7f800000
+# PASS: a=00000000 (pos_zero), b=7f800000 (pos_INF), z=7f800000
+# FAIL: a=00000000 (pos_zero), b=bf800000 (neg_normal), got z=00000000, expected z=80000000
+# FAIL: a=00000000 (pos_zero), b=3f800000 (pos_normal), got z=80000000, expected z=00000000
+# FAIL: a=00000000 (pos_zero), b=80000001 (neg_denormal), got z=00000000, expected z=80000000
+# FAIL: a=00000000 (pos_zero), b=00000001 (pos_denormal), got z=80000000, expected z=00000000
+# FAIL: a=00000000 (pos_zero), b=80000000 (neg_zero), got z=00000000, expected z=80000000
+# FAIL: a=00000000 (pos_zero), b=00000000 (pos_zero), got z=80000000, expected z=00000000
