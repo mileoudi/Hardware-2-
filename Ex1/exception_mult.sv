@@ -7,7 +7,7 @@ module exception_mult (
     input logic inexact,
     input logic [2:0] round_mode,
 
-    output logic [31:0] z,k,
+    output logic [31:0] z,
     output logic zero_f, inf_f, nan_f, tiny_f, huge_f, inexact_f
 );
 
@@ -19,7 +19,7 @@ typedef enum {
     MAX_NORM
 } interp_t;
 
-function interp_t num_interp(input logic [31:0] signal);
+function interp_t num_interp(logic [31:0] signal);
         case(signal[30:23])
             8'b1111_1111: return INF; 
             8'b0000_0000: return ZERO; 
@@ -67,46 +67,46 @@ case ({num_interp(a),num_interp(b)})
 		end
 	
 	{NORM, NORM}:
-                begin
-                    if (overflow) begin
-			huge_f = 1;
-			inexact_f = 1;
-			case(round_mode)
-			IEEE_near, away_zero: 
-				begin
-				    z = {z_calc[31], z_num(INF)};
-				    inf_f = 1;
-				end
-			IEEE_zero: 
-				begin
-				    z = {z_calc[31], z_num(MAX_NORM)};
-				end
-			IEEE_pinf, near_up: 
-				begin
-				    if( !z_calc[31] ) 
-					begin
-					    z = {z_calc[31], z_num(INF)};
-					    inf_f = 1;
-					end
-				    else
-					begin
-					    z = {z_calc[31], z_num(MAX_NORM)};
-					end
-				end
+        begin
+                if (overflow) begin
+					huge_f = 1;
+					inexact_f = 1;
+					case(round_mode)
+					IEEE_near, away_zero: 
+						begin
+							z = {z_calc[31], z_num(INF)};
+							inf_f = 1;
+						end 
+					IEEE_zero: 
+						begin
+							z = {z_calc[31], z_num(MAX_NORM)};
+						end
+					IEEE_pinf, near_up: 
+						begin
+							if( !z_calc[31] ) 
+								begin
+									z = {z_calc[31], z_num(INF)};
+									inf_f = 1;
+								end
+							else
+								begin
+								z = {z_calc[31], z_num(MAX_NORM)};
+								end
+						end
 							
-			IEEE_ninf: 
-				begin
-				    if( !z_calc[31] ) 
-					begin
-					    z = {z_calc[31], z_num(MAX_NORM)};
-					end
-				    else
-					begin
-					    z = {z_calc[31], z_num(INF)};
-					    inf_f = 1;
-					end
-				end
-			endcase
+					IEEE_ninf: 
+						begin
+							if( !z_calc[31] ) 
+								begin
+									z = {z_calc[31], z_num(MAX_NORM)};
+								end
+							else
+								begin
+									z = {z_calc[31], z_num(INF)};
+									inf_f = 1;
+								end
+						end
+					endcase
 			end else if ( underflow ) begin
 			tiny_f = 1;
 			inexact_f = 1;
@@ -125,27 +125,27 @@ case ({num_interp(a),num_interp(b)})
 			IEEE_pinf, near_up: 
 				begin
 				    if( !z_calc[31] ) 
-					begin
-					    z = {z_calc[31], z_num(MIN_NORM)};
-					end
+						begin
+					    	z = {z_calc[31], z_num(MIN_NORM)};
+						end
 				    else
-					begin
-					    z = {z_calc[31], z_num(ZERO)};
+						begin
+					    	z = {z_calc[31], z_num(ZERO)};
 				    	    zero_f = 1;
-					end
+						end
 				end
 							
 			IEEE_ninf: 
 				begin
 				    if( !z_calc[31] ) 
-					begin
-					    z = {z_calc[31], z_num(ZERO)};
-					    zero_f = 1;
-					end
+						begin
+							z = {z_calc[31], z_num(ZERO)};
+							zero_f = 1;
+						end
 				    else
-					begin
-					    z = {z_calc[31], z_num(MIN_NORM)};
-					end
+						begin
+							z = {z_calc[31], z_num(MIN_NORM)};
+						end
 				end
 			endcase
 			end else begin
@@ -158,8 +158,8 @@ case ({num_interp(a),num_interp(b)})
 	    begin
                 z = {z_calc[31], 31'b0};
                 zero_f = 1'b1;
-            end
-        endcase
+        end
+    endcase
 
 nan_f = (z_calc[30:23] == 8'hFF & z_calc[22:0] > 23'b0);
 

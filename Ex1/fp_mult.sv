@@ -119,7 +119,6 @@ exception_mult exception_handler(
         .inexact(inexact),
         .round_mode(round_mode),
         .z(z),
-		.k(),
         .zero_f(zero_f),
         .inf_f(inf_f),
         .nan_f(nan_f),
@@ -129,4 +128,4 @@ exception_mult exception_handler(
 );
 assign status = {1'b0, 1'b0, inexact_f, huge_f, tiny_f, nan_f, inf_f, zero_f};
 
-endmodule
+endmodule 

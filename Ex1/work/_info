@@ -1,8 +1,24 @@
 m255
 K4
 z2
-!s12c _opt41
+!s12c _opt49
 Z0 !s99 nomlopt
+!s12c _opt48
+R0
+!s12c _opt47
+R0
+!s12c _opt46
+R0
+!s12c _opt45
+R0
+!s12c _opt44
+R0
+!s12c _opt43
+R0
+!s12c _opt42
+R0
+!s12c _opt41
+R0
 !s12c _opt40
 R0
 !s12c _opt39
@@ -586,6 +602,109 @@ R9
 n@_opt41
 R10
 R4
+T_opt42
+!s110 1748640443
+VA>LeERl52GhYJm=ZYY_k81
+R5
+=1-14857f420d15-683a22ba-2a6-42f8
+R0
+R6
+R11
+R8
+R9
+n@_opt42
+R10
+R4
+T_opt43
+!s110 1748640952
+V5l^e7keEIA?aK_4KEEk2U3
+R5
+=1-14857f420d15-683a24b7-18c-690
+R0
+R6
+R11
+R8
+R9
+n@_opt43
+R10
+R4
+T_opt44
+!s110 1748641274
+Vil=H7Ti8Cn5ARceHCP`Pm0
+R5
+=1-14857f420d15-683a25fa-1da-4564
+R0
+R6
+R11
+R8
+R9
+n@_opt44
+R10
+R4
+T_opt45
+!s110 1748641345
+VTZZNUBiASdgA;Wm6=D3:T2
+R5
+=1-14857f420d15-683a2641-16a-3520
+R0
+R6
+!s124 OEM10U6 
+R8
+R9
+n@_opt45
+R10
+R4
+T_opt46
+!s110 1748641420
+VKIBf57o38V;N_a?Pf8Nz_3
+R5
+=1-14857f420d15-683a268c-1ae-6bd0
+R0
+R6
+R11
+R8
+R9
+n@_opt46
+R10
+R4
+T_opt47
+!s110 1748643067
+VJG8=NZ^5<CWJ?OaSC^=?J3
+R5
+=1-14857f420d15-683a2cfb-170-510c
+R0
+R6
+R11
+R8
+R9
+n@_opt47
+R10
+R4
+T_opt48
+!s110 1748643553
+VV<zP2M8`m@`Gzo6:OOnH`0
+R5
+=1-14857f420d15-683a2ee1-55-5b3c
+R0
+R6
+R11
+R8
+R9
+n@_opt48
+R10
+R4
+T_opt49
+!s110 1748686034
+Vlk[b5>h=_jWK=^f]VIm;W0
+R5
+=1-14857f420d15-683ad4d0-291-2e64
+R0
+R6
+R11
+R8
+R9
+n@_opt49
+R10
 T_opt5
 !s110 1748599310
 VHc^Q1;ea?n88ozCjk>o<f1
@@ -656,28 +775,28 @@ Z12 2fp_mult.sv|normalize_mult.sv|round_mult.sv|exception_mult.sv|multiplication
 Z13 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
 Z14 DXx4 work 12 rounding_pkg 0 22 j>1HSVB@]fkCEEL`d@Q<j0
 DXx4 work 22 exception_mult_sv_unit 0 22 X1FC:5NF1ckE;c71IBNZO2
-Z15 !s110 1748631714
+Z15 !s110 1748686027
 Z16 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 !i10b 1
-!s100 0H[fR85b[3T[]eBO>N=Ib0
-I8fUi6Uzf5eOI?Z_nOHE;B0
+!s100 Z1;Mj8cL_<kWnbJf[jV?f2
+IBUIj;4EY2mc:G7dCA<URg1
 !s105 exception_mult_sv_unit
 S1
 R4
-Z17 w1748616493
+Z17 w1748641286
 Z18 8exception_mult.sv
 Z19 Fexception_mult.sv
-!i122 75
+!i122 8
 L0 3 166
 Z20 OL;L;2023.3;77
 31
-Z21 !s108 1748631714.000000
-!s107 fp_mult_tb.sv|test_status_bits.sv|test_status_z_combinations.sv|fp_mult_top.sv|multiplication.sv|exception_mult.sv|round_mult.sv|normalize_mult.sv|fp_mult.sv|
-Z22 !s90 fp_mult.sv|normalize_mult.sv|round_mult.sv|exception_mult.sv|multiplication.sv|fp_mult_top.sv|test_status_z_combinations.sv|test_status_bits.sv|fp_mult_tb.sv|
+Z21 !s108 1748686027.000000
+Z22 !s107 fp_mult_tb.sv|test_status_bits.sv|test_status_z_combinations.sv|fp_mult_top.sv|multiplication.sv|exception_mult.sv|round_mult.sv|normalize_mult.sv|fp_mult.sv|
+Z23 !s90 fp_mult.sv|normalize_mult.sv|round_mult.sv|exception_mult.sv|multiplication.sv|fp_mult_top.sv|test_status_z_combinations.sv|test_status_bits.sv|fp_mult_tb.sv|
 !i113 0
-Z23 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z24 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R9
 Xexception_mult_sv_unit
 R12
@@ -696,15 +815,15 @@ R4
 R17
 R18
 R19
-!i122 75
-Z24 L0 1 0
+!i122 8
+Z25 L0 1 0
 R20
 31
 R21
-Z25 !s107 fp_mult_tb.sv|test_status_bits.sv|test_status_z_combinations.sv|fp_mult_top.sv|multiplication.sv|exception_mult.sv|round_mult.sv|normalize_mult.sv|fp_mult.sv|
 R22
-!i113 0
 R23
+!i113 0
+R24
 R9
 vfp_mult
 R12
@@ -716,23 +835,23 @@ R16
 r1
 !s85 0
 !i10b 1
-!s100 [8GQT5S;bA^7EfNQ<fhk12
-IT`kW=Wnkb9e]bE2FoA8>Y2
+!s100 OS=28BjL`UdDAb=D:UJ=>0
+IkTkc239bcEHm6i[]i1Hn=1
 !s105 fp_mult_sv_unit
 S1
 R4
-Z26 w1748629273
+Z26 w1748685135
 Z27 8fp_mult.sv
 Z28 Ffp_mult.sv
-!i122 75
-L0 16 117
+!i122 8
+L0 16 116
 R20
 31
 R21
-R25
 R22
-!i113 0
 R23
+!i113 0
+R24
 R9
 Xfp_mult_sv_unit
 R12
@@ -751,15 +870,15 @@ R4
 R26
 R27
 R28
-!i122 75
+!i122 8
 L0 14 0
 R20
 31
 R21
-R25
 R22
-!i113 0
 R23
+!i113 0
+R24
 R9
 vfp_mult_tb
 R12
@@ -775,18 +894,18 @@ IoVFAidBNTR992T9caI>Lf3
 !s105 fp_mult_tb_sv_unit
 S1
 R4
-Z29 w1748631604
+Z29 w1748641364
 Z30 8fp_mult_tb.sv
 Z31 Ffp_mult_tb.sv
-!i122 75
+!i122 8
 L0 3 216
 R20
 31
 R21
-R25
 R22
-!i113 0
 R23
+!i113 0
+R24
 R9
 Xfp_mult_tb_sv_unit
 R12
@@ -805,15 +924,15 @@ R29
 R30
 R31
 Z32 Fmultiplication.sv
-!i122 75
+!i122 8
 Z33 L0 5 0
 R20
 31
 R21
-R25
 R22
-!i113 0
 R23
+!i113 0
+R24
 R9
 vfp_mult_top
 R12
@@ -827,7 +946,7 @@ R4
 w1748284245
 8fp_mult_top.sv
 Ffp_mult_top.sv
-!i122 75
+!i122 8
 L0 2 36
 R16
 R20
@@ -835,10 +954,10 @@ r1
 !s85 0
 31
 R21
-R25
 R22
-!i113 0
 R23
+!i113 0
+R24
 R9
 Xmultiplication_sv_unit
 R12
@@ -856,15 +975,15 @@ R4
 w1748339902
 8multiplication.sv
 R32
-!i122 75
+!i122 8
 R33
 R20
 31
 R21
-R25
 R22
-!i113 0
 R23
+!i113 0
+R24
 R9
 vnormalize_mult
 R12
@@ -878,7 +997,7 @@ R4
 w1748554184
 8normalize_mult.sv
 Fnormalize_mult.sv
-!i122 75
+!i122 8
 L0 1 26
 R16
 R20
@@ -886,10 +1005,10 @@ r1
 !s85 0
 31
 R21
-R25
 R22
-!i113 0
 R23
+!i113 0
+R24
 R9
 vround_mult
 R12
@@ -909,15 +1028,15 @@ R4
 Z34 w1748628022
 Z35 8round_mult.sv
 Z36 Fround_mult.sv
-!i122 75
+!i122 8
 L0 3 79
 R20
 31
 R21
-R25
 R22
-!i113 0
 R23
+!i113 0
+R24
 R9
 Xround_mult_sv_unit
 R12
@@ -936,15 +1055,15 @@ R4
 R34
 R35
 R36
-!i122 75
-R24
+!i122 8
+R25
 R20
 31
 R21
-R25
 R22
-!i113 0
 R23
+!i113 0
+R24
 R9
 Xrounding_pkg
 R12
@@ -958,32 +1077,32 @@ R4
 R26
 R27
 R28
-!i122 75
-R24
+!i122 8
+R25
 Vj>1HSVB@]fkCEEL`d@Q<j0
 R20
 r1
 !s85 0
 31
 R21
-R25
 R22
-!i113 0
 R23
+!i113 0
+R24
 R9
 vtest_status_bits
 R12
 R13
 R15
 !i10b 1
-!s100 lmBLPbXm]5LQUBdm<jfEg1
-IBWDeI=j3=zU1KI>ckjBB[3
+!s100 z?@4o?XjFCKL50>Sn`BSS0
+IdMag`[TEc:TQgaBgDDQTg0
 S1
 R4
-w1748615974
+w1748685626
 8test_status_bits.sv
 Ftest_status_bits.sv
-!i122 75
+!i122 8
 L0 1 21
 R16
 R20
@@ -991,33 +1110,33 @@ r1
 !s85 0
 31
 R21
-R25
 R22
-!i113 0
 R23
+!i113 0
+R24
 R9
 vtest_status_z_combinations
 R12
 R13
 R15
 !i10b 1
-!s100 aHT=`G80HSSD]3`6`Z_;b0
-IZ4=lZ^m=WC3fmjZDb2JkN0
+!s100 ?kc<cO6il=9IIlz=f5IUZ0
+IF@ANoHANQi9f8gOBoTcjX1
 S1
 R4
-w1748615949
+w1748686001
 8test_status_z_combinations.sv
 Ftest_status_z_combinations.sv
-!i122 75
-L0 2 31
+!i122 8
+L0 2 42
 R16
 R20
 r1
 !s85 0
 31
 R21
-R25
 R22
-!i113 0
 R23
+!i113 0
+R24
 R9
