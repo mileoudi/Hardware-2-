@@ -59,6 +59,7 @@ always_comb begin
         // Zero * Inf (or NaN) => treat as Inf
         {ZERO, INF}, {INF, ZERO}: begin
             inf_f = 1;
+            nan_f = 1; 
             z = {1'b0, z_num(INF)}; // Always +INF
         end
 
@@ -140,7 +141,6 @@ always_comb begin
                 zero_f = 1'b1;
             end
         endcase
-nan_f = (z_calc[30:23] == 8'hFF & z_calc[22:0] > 23'b0);
 end
 
 endmodule	
