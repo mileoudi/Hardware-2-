@@ -1,4 +1,5 @@
 Floating Point Multiplier
+
 📌 Overview
 
 This repository contains a hardware implementation of a single-precision (32-bit) IEEE-754 Floating Point Multiplier in SystemVerilog.
