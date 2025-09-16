@@ -45,5 +45,4 @@ The design includes a **pipelined architecture**, **normalization**, **rounding*
 │   ├── test_status_bits.sv
 │   └── test_status_z_combinations.sv
 │
-└── report/                 # Documentation
-    └── report.pdf
+└── Hardware_2.pdf          # Report with methodology, design description, and simulation results
